@@ -98,7 +98,8 @@ int drawing(FILE *file, t_zone *zone, char *array)
 	int count;
 	t_list tmp;
 
-	while ((count = fscanf(file, "%c %f %f %f %f %c\n", &tmp.type, &tmp.x, &tmp.y, &tmp.width, &tmp.height, &tmp.color)) == 6)
+	while ((count = fscanf(file, "%c %f %f %f %f %c\n", &tmp.type, &tmp.x,
+						   &tmp.y, &tmp.width, &tmp.height, &tmp.color)) == 6)
 	{
 		if (tmp.width <= 0.00000000 || tmp.height <= 0.00000000)
 			return (0);

@@ -52,6 +52,8 @@ char *get_zone(FILE *file, t_zone *zone)
     
 	if ((i = fscanf(file, "%d %d %c\n", &zone->width, &zone->height, &zone->background)) != 3)
 		return (NULL);
+	if (i == -1)
+		return (NULL);
 	if (zone->width <= 0 || zone->width > 300 || zone->height <= 0 || zone->height > 300)
 		return (NULL);
 	if (!(array = (char *)malloc(sizeof(char) * (zone->width * zone->height))))
